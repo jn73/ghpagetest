@@ -10,7 +10,8 @@
 		window.addEventListener('message', function(e) { 
 			console.log('e');
 			console.log(event);
-			 e.source.postMessage({height: 1000}, e.origin);
+			console.log('replying..');
+			e.source.postMessage({height: 1000}, e.origin);
 		}); 
 	</script>
 </head>
