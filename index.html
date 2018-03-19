@@ -5,13 +5,17 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+
+	<script>
+		window.addEventListener('message', function(event) { 
+			console.log('e')
+			console.log(event)
+		}); 
+	</script>
 </head>
-<body onload="window.parent.dispatchEvent(new CustomEvent('offersHeight', { detail: { height: document.body.offsetHeight} }))">
-
-
-	<h1>Kalle anka</h1>
-
-
-</body>
+<!--<body onload="window.parent.dispatchEvent(new CustomEvent('offersHeight', { detail: { height: document.body.offsetHeight} }))">-->
+	<body>
+		<h1>Kalle anka</h1>
+	</body>
 </html>
 
