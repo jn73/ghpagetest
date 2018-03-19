@@ -7,13 +7,10 @@
 	<title>Document</title>
 
 	<script>
-		let loaded = false;
-
 		window.addEventListener('message', function(e) {
-			console.log('e');
-			console.log(event);
-			console.log('replying..');
-			e.source.postMessage({type: 'offersHeightEvent', data: {height: document.documentElement.offsetHeight}}, e.origin);
+			if (e.data.type === 'iframeHeightReq') {
+				e.source.postMessage({type: 'offersHeightEvent', data: {height: document.documentElement.offsetHeight}}, e.origin);
+			}
 		}); 
 	</script>
 </head>
