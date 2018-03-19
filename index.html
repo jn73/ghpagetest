@@ -13,14 +13,12 @@
 			console.log('e');
 			console.log(event);
 			console.log('replying..');
-			if (loaded) {
-				e.source.postMessage({height: document.body.offsetHeight}, e.origin);
-			}
+			e.source.postMessage({height: document.body.offsetHeight}, e.origin);
 		}); 
 	</script>
 </head>
 <!--<body onload="window.parent.dispatchEvent(new CustomEvent('offersHeight', { detail: { height: document.body.offsetHeight} }))">-->
-	<body onload="loaded = true;">
+	<body>
 		<h1>Kalle anka</h1>
 	</body>
 </html>
