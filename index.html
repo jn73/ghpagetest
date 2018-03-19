@@ -7,16 +7,20 @@
 	<title>Document</title>
 
 	<script>
-		window.addEventListener('message', function(e) { 
+		let loaded = false;
+
+		window.addEventListener('message', function(e) {
 			console.log('e');
 			console.log(event);
 			console.log('replying..');
-			e.source.postMessage({height: 1000}, e.origin);
+			if (loaded) {
+				e.source.postMessage({height: document.body.offsetHeight}, e.origin);
+			}
 		}); 
 	</script>
 </head>
 <!--<body onload="window.parent.dispatchEvent(new CustomEvent('offersHeight', { detail: { height: document.body.offsetHeight} }))">-->
-	<body>
+	<body onload="loaded = true;">
 		<h1>Kalle anka</h1>
 	</body>
 </html>
