@@ -13,7 +13,7 @@
 			console.log('e');
 			console.log(event);
 			console.log('replying..');
-			e.source.postMessage({height: document.body.offsetHeight}, e.origin);
+			e.source.postMessage({type: 'offersHeightEvent', data: {height: document.body.offsetHeight}}, e.origin);
 		}); 
 	</script>
 </head>
